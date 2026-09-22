@@ -1,0 +1,161 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// Contenido principal y Sidebar
+.contenido-principal {
+    @include desktop {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "blog sidebar";
+        gap: 4rem;
+    }
+
+    .blog {
+        grid-area: blog;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+    }
+}
+
+// Entradas de Blog
+.entrada {
+    border-bottom: 1.5px solid $gris;
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+        border: none;
+        margin-bottom: 0;
+    }
+}
+
+// Widget Curso y Listas
+.cursos {
+    list-style: none;
+}
+
+.widget-curso {
+    border-bottom: 1px solid $gris;
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+        border: none;
+        margin-bottom: 0;
+    }
+
+    &__label {
+        font-family: $fuente-heading;
+        font-weight: bold;
+    }
+
+    &__info {
+        font-weight: normal;
+    }
+
+    &__label,
+    &__info {
+        font-size: 2rem;
+    }
+}
+
+// Cursos
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid $gris;
+
+    @include desktop {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    &__label {
+        font-family: $fuente-heading;
+        font-weight: bold;
+    }
+
+    &__info {
+        font-weight: normal;
+    }
+
+    &__label,
+    &__info {
+        font-size: 2rem;
+    }
+}
+
+// Sobre Nosotros
+.sobre-nosotros {
+    @include desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "nosotros-img nosotros-txt";
+        gap: 2rem;
+    }
+
+    &__imagen {
+        grid-area: nosotros-img;
+    }
+
+    &__texto {
+        grid-area: nosotros-txt;
+    }
+}
+
+// Contacto y Formulario
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: $blanco;
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+
+    &__label {
+        flex: 0 0 9rem;
+        text-align: right;
+    }
+
+    &__field {
+        flex: 1;
+        border: 1px solid $gris;
+        transition: $transicion-suave;
+
+        &--textarea {
+            height: 20rem;
+        }
+
+        &:focus {
+            border-color: $primary;
+            outline: 2px solid $primary;
+            background-color: $blanco;
+        }
+    }
+}
+
+// Carrusel
+.carousel {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    &-control-prev,
+    &-control-next {
+        transition: $transicion-suave;
+    }
+}

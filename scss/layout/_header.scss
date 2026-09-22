@@ -1,0 +1,42 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.header {
+    background-image: url(../img/banner.jpg);
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &__texto {
+        text-align: center;
+        color: $blanco;
+        margin-top: 5rem;
+
+        @include desktop {
+            margin-top: 20rem;
+        }
+    }
+}
+
+.barra {
+    padding-top: 4rem;
+
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo {
+    color: $blanco;
+
+    &__nombre {
+        font-weight: 400;
+    }
+
+    &__bold {
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,42 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.boton {
+    display: block;
+    font-family: $fuente-heading;
+    color: $blanco;
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+    transition: $transicion-suave;
+
+    @include desktop {
+        display: inline-block;
+    }
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        opacity: 0.9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        outline: none;
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    &--primario {
+        background-color: $negro;
+    }
+
+    &--secundario {
+        background-color: $primary;
+    }
+}

@@ -1,0 +1,38 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.navegacion {
+    @include desktop {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__enlace {
+        display: block;
+        text-align: center;
+        font-size: 1.8rem;
+        color: $blanco;
+        transition: $transicion-suave;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        &:active {
+            color: $blanco;
+            transform: translateY(0);
+        }
+    }
+}
+
+.navbar-toggler {
+    border-color: $blanco;
+    transition: $transicion-suave;
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(120, 77, 60, 0.5);
+    }
+}
